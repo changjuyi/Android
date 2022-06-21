@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/detail_bg"
+    tools:context=".Productdetails">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_more"
+        android:transitionName="image"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="375dp"
+        android:background="@drawable/detail_page_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/product_firstcat"
+            android:layout_width="93dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/gray_bg"
+            android:fontFamily="@font/rubik_medium"
+            android:gravity="center"
+            android:text="Body"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/product_secondcat"
+            android:layout_width="90dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:background="@drawable/gray_bg"
+            android:fontFamily="@font/rubik_medium"
+            android:gravity="center"
+            android:text="Lotion"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/product_firstcat"
+            app:layout_constraintStart_toEndOf="@+id/product_firstcat"
+            app:layout_constraintTop_toTopOf="@+id/product_firstcat" />
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/rubik_bold"
+            android:text="Sabon Body Lotion"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/product_firstcat"
+            app:layout_constraintTop_toBottomOf="@+id/product_firstcat" />
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:fontFamily="@font/rubik_bold"
+            android:text="$ 950"
+            android:textColor="#42995C"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/product_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/product_name"
+            app:layout_constraintTop_toTopOf="@+id/product_name" />
+
+        <TextView
+            android:id="@+id/product_dec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/rubik"
+            android:lineSpacingExtra="2dp"
+            android:text="@string/body_lotion_decription"
+            android:textColor="@android:color/background_dark"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/product_price"
+            app:layout_constraintStart_toStartOf="@+id/product_name"
+            app:layout_constraintTop_toBottomOf="@+id/product_name" />
+
+        <ImageButton
+            android:id="@+id/minus"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:background="@drawable/gray_bg"
+            android:onClick="decreaseNum"
+            app:layout_constraintBottom_toBottomOf="@+id/check"
+            app:layout_constraintStart_toStartOf="@+id/product_dec"
+            app:layout_constraintTop_toTopOf="@+id/check"
+            app:srcCompat="@drawable/ic_minus" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/rubik_medium"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/minus"
+            app:layout_constraintStart_toEndOf="@+id/minus"
+            app:layout_constraintTop_toTopOf="@+id/minus" />
+
+        <ImageButton
+            android:id="@+id/add"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:background="@drawable/green_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/number"
+            app:layout_constraintStart_toEndOf="@+id/number"
+            app:layout_constraintTop_toTopOf="@+id/number"
+            app:srcCompat="@drawable/ic_add"
+            android:onClick="increaseNum"/>
+
+        <Button
+            android:id="@+id/check"
+            android:layout_width="154dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/detail_page_cart_button_bg"
+            android:drawableRight="@drawable/ic_baseline_arrow_forward_24"
+            android:fontFamily="@font/rubik_medium"
+            android:padding="8dp"
+            android:paddingRight="16dp"
+            android:text="Add to Cart"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_dec" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="313dp"
+        android:layout_height="364dp"
+        android:layout_marginTop="36dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sabon_bodylotion" />
+
+</android.support.constraint.ConstraintLayout>
